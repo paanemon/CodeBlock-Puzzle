@@ -76,3 +76,20 @@ If the string **cannot be executed**, no error occurs—it's simply **ignored** 
 **Characters are treated as variables** by default.  
 **Examples:**
 
+print('a'); → prints "a"
+a=1; print(a); → prints "1"
+
+(`print` is a **function defined within the game**)
+
+`**get_value**` is a function that **returns the value** of a specific string (not a game function, but code-level).  
+**Examples:**
+
+get_value(1) → 1
+get_value(1+1) → 2
+get_value(1==1) → true
+get_value(a+1) → 3 (if a=2)
+
+
+## if and while
+`**if**` and **`while`** only affect code that appears on the **same line** after the condition statement.
+
