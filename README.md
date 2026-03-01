@@ -8,6 +8,7 @@
 
 
 
+
 방향키를 누를 때마다 인터프리트라는 과정이 실행됨
 # 인터프리트란
 현재 보드에 있는 실행 가능한 코드를 수행하는 과정
@@ -43,4 +44,35 @@ get_value(a+1) → 3 (단, a의 값이 2인 경우)
 
 ## if와 while
 if와 while은 같은 줄에 위치한 코드 중, 해당 조건문 뒤에 오는 코드들에만 영향을 미침
+
+# Controls
+Press arrow keys to move **all semicolons (;)** on the board in that direction simultaneously.
+
+Strings can generally be **pushed**.  
+However, pushing is **not possible** in these cases:
+1. If any part of the string would go **off the board** when pushed
+2. If the string being pushed **contains #**
+
+Pressing an arrow key **triggers the interpret process** each time.
+
+# Interpret
+**Interpret** is the process of executing **executable code** currently present on the board.
+
+## Code Execution Rules
+Code is read **sequentially from top-left to bottom-right**, like reading a book.  
+When a **semicolon (;)** is encountered, the **word immediately before it** is executed.  
+Here, a "**word**" means a string **not containing spaces, #, or ;**.
+
+### Execution Method
+If an **executable string** exists, it is passed to `command_parser`.  
+`command_parser` checks if the string is a **valid command** and, if so, **parses it** and passes it to `command_executer`.  
+`command_executer` **actually executes** the command to manipulate the board.
+
+If the string **cannot be executed**, no error occurs—it's simply **ignored** as non-code.
+
+# Basic Syntax
+
+## Assignment Operators and `get_value`
+**Characters are treated as variables** by default.  
+**Examples:**
 
